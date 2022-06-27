@@ -1,24 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sUU-yl-hfS">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="gAV-2S-KDb">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="sUU-yl-hfS" customClass="ViewController" customModule="NFCApp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uYO-ib-OP3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ken-U5-3H1">
+                                <rect key="frame" x="0.0" y="228" width="414" height="440"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="7dj-k8-DeB">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="String to write" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hkU-IH-ArG">
+                                                <rect key="frame" x="62" y="0.0" width="290" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="vkS-QI-731"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65e-k3-alx">
+                                                <rect key="frame" x="165.5" y="41" width="83" height="30"/>
+                                                <state key="normal" title="Write to Tag"/>
+                                                <connections>
+                                                    <action selector="userTappedWriteToTag:" destination="sUU-yl-hfS" eventType="touchUpInside" id="hqK-35-uCR"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fo-4z-cbK">
+                                                <rect key="frame" x="87" y="78" width="240" height="48"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="7fP-iy-UKu"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7Q-gq-TcQ">
+                                                <rect key="frame" x="182" y="133" width="50" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NeQ-gw-YTa">
+                                                <rect key="frame" x="171" y="190" width="72" height="30"/>
+                                                <state key="normal" title="Start Scan"/>
+                                                <connections>
+                                                    <action selector="userTappedStartScan:" destination="sUU-yl-hfS" eventType="touchUpInside" id="EvX-xh-oDQ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e2J-XJ-iU8">
+                                        <rect key="frame" x="0.0" y="220" width="414" height="220"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lWi-Oe-ykt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="ken-U5-3H1" firstAttribute="centerX" secondItem="uYO-ib-OP3" secondAttribute="centerX" id="iOs-LC-MFP"/>
+                            <constraint firstItem="hkU-IH-ArG" firstAttribute="width" secondItem="lWi-Oe-ykt" secondAttribute="width" multiplier="0.7" id="rL3-kd-yEH"/>
+                            <constraint firstItem="ken-U5-3H1" firstAttribute="centerY" secondItem="uYO-ib-OP3" secondAttribute="centerY" id="rmR-3P-G76"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="8VN-6X-5be" appends="YES" id="D9E-Zt-xzU"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="tagIdLabel" destination="V7Q-gq-TcQ" id="xuX-GK-4VO"/>
+                        <outlet property="writeToTagTextField" destination="hkU-IH-ArG" id="mUX-eS-NrX"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QAM-Ly-ntK" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="8VN-6X-5be" userLabel="Background Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="userTappedBackground:" destination="sUU-yl-hfS" id="v51-sd-dlX"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="139" y="116"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
